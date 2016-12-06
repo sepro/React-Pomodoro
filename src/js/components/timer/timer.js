@@ -3,7 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import styled from 'styled-components';
 
 import TimeDisplay from './time-display';
-import TextButton from './text-button'
+import TextButton, {Wrapper} from './text-button'
 
 import dateFns from 'date-fns';
 
@@ -25,31 +25,25 @@ class Timer extends React.Component {
     }
   }
 
-  _start_pomodoro = (ev) => {
+  _set_pomodoro = (ev) => {
     ev.preventDefault();
 
     this.props.set_time(1500000)
-
-    this.setState({running: true, last_time: new Date()}, () => {this._decrease_time()});
   }
 
-  _start_short_break = (ev) => {
+  _set_short_break = (ev) => {
     ev.preventDefault();
 
     this.props.set_time(300000)
-
-    this.setState({running: true, last_time: new Date()}, () => {this._decrease_time()});
   }
 
-  _start_long_break = (ev) => {
+  _set_long_break = (ev) => {
     ev.preventDefault();
 
     this.props.set_time(600000)
-
-    this.setState({running: true, last_time: new Date()}, () => {this._decrease_time()});
   }
 
-  _pause_resume = (ev) => {
+  _start_stop = (ev) => {
     ev.preventDefault();
 
     const current_time = new Date();
@@ -67,11 +61,15 @@ class Timer extends React.Component {
   render() {
     return (
       <div>
+          <Wrapper>
+              <TextButton onClick={ this._set_pomodoro }>Pomodoro</TextButton>
+              <TextButton onClick={ this._set_short_break }>Short Break</TextButton>
+              <TextButton onClick={ this._set_long_break }>Long Break</TextButton>
+          </Wrapper>
+
           <TimeDisplay current_time={ this.props.current_time } />
-          <TextButton onClick={ this._start_pomodoro }>Pomodoro</TextButton>
-          <TextButton onClick={ this._start_short_break }>Short Break</TextButton>
-          <TextButton onClick={ this._start_long_break }>Long Break</TextButton>
-          <TextButton onClick={ this._pause_resume }>Pause/Resume</TextButton>
+
+          <TextButton onClick={ this._start_stop }>Pause/Resume</TextButton>
       </div>
     );
   }

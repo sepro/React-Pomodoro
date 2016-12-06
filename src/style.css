@@ -1,5 +1,12 @@
 body {
-  font-family: Trebuchet MS,Helvetica,sans-serif;
-  background: "img/baby-plum-tomatoes.jpg";
-  background-size: cover;
+    font-family: Trebuchet MS,Helvetica,sans-serif;
+    background: "img/baby-plum-tomatoes.jpg";
+    background-size: cover;
+}
+
+html {
+  height: 100%;
+}
+body {
+  min-height: 100%;
 }
