@@ -3,6 +3,9 @@ logs
 *.log
 npm-debug.log*
 
+#pycharm
+.idea
+
 # Runtime data
 pids
 *.pid
