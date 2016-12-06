@@ -58,6 +58,12 @@ class Timer extends React.Component {
     }
   }
 
+  _notify = (ev) => {
+    ev.preventDefault();
+
+
+  }
+
   render() {
     return (
       <div>
@@ -69,7 +75,10 @@ class Timer extends React.Component {
 
           <TimeDisplay current_time={ this.props.current_time } />
 
-          <TextButton onClick={ this._start_stop }>Pause/Resume</TextButton>
+          <Wrapper>
+                <TextButton onClick={ this._start_stop }>Pause/Resume</TextButton>
+                <TextButton onClick={ this._notify }>Test Notification</TextButton>
+          </Wrapper>
       </div>
     );
   }
