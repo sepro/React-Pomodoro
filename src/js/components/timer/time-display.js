@@ -3,13 +3,14 @@ import styled from 'styled-components';
 
 import dateFns from 'date-fns';
 
-
 const Time = styled.h1`
-  font-size: 1.5em;
+  font-size: 96px;
   text-align: center;
   color: white;
+  -moz-text-shadow: 2px 2px 1px #000;
+  -webkit-text-shadow: 2px 2px 1px #000;
+  text-shadow: 2px 2px 1px #000;
 `;
-
 
 const Wrapper = styled.section`
   padding: 4em;
