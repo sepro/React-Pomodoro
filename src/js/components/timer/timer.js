@@ -1,8 +1,8 @@
 import React from "react";
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import TimeDisplay from './time-display'
 
 import dateFns from 'date-fns';
-
 
 class Timer extends React.Component {
   constructor(props) {
@@ -61,35 +61,10 @@ class Timer extends React.Component {
     this.setState({...this.state, running: false, last_action: 'pause'});
   }
 
-  _format_time = (t) => {
-    var time = dateFns.format(t, "mm:ss");
-    var msec = dateFns.format(t, "SS");
-
-    if (msec.length < 2) {
-      return time + '.0' + msec;
-    } else {
-      return time + '.' + msec;
-    }
-
-
-  }
-
   render() {
     return (
       <div>
-          <div className="timer">
-            <div className="timer-text">{ this._format_time(this.props.current_time) }</div>
-            <ReactCSSTransitionGroup component="div" transitionName={ this.state.last_action } transitionEnterTimeout={300} transitionLeave={false}>
-              <span
-			    key={ this.state.last_action }
-				className= { this.state.last_action + "-icon" } >
-
-			  </span>
-            </ReactCSSTransitionGroup>
-          </div>
-          <div className="timer-controls">
-            <button className="button play-button" onClick={ this._start } disabled={ this.state.running } /> <button className="button pause-button" onClick={ this._pause } disabled={ !this.state.running } /> <button className="button stop-button" onClick={ this._stop } />
-          </div>
+          <TimeDisplay current_time={ this.props.current_time } />
       </div>
     );
   }

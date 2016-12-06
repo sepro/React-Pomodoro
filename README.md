@@ -15,3 +15,7 @@ can be started using:
 To start webpack with hot-reloading type:
 
     npm start
+    
+## Acknowledgements
+
+http://www.publicdomainpictures.net/pictures/140000/velka/baby-plum-tomatoes.jpg
