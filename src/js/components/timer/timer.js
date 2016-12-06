@@ -11,7 +11,7 @@ class Timer extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {running: false, last_time: new Date()};
+    this.state = {reset_to: 1500000, running: false, last_time: new Date()};
   }
 
   _decrease_time = () => {
@@ -19,28 +19,42 @@ class Timer extends React.Component {
       const current_time = new Date();
       const interval = dateFns.differenceInMilliseconds(current_time, this.state.last_time);
 
-      this.props.decrease_time(interval);
+      if (this.props.current_time > interval) {
+            this.props.decrease_time(interval);
+            this.setState({last_time: current_time}, () => {setTimeout(this._decrease_time, 50)});
+      } else {
+            this.props.set_time(0);
+            this.setState({last_time: current_time, running: false});
+      }
 
-      this.setState({last_time: current_time}, () => {setTimeout(this._decrease_time, 50)});
     }
   }
 
   _set_pomodoro = (ev) => {
     ev.preventDefault();
 
+    this.setState({reset_to: 1500000});
     this.props.set_time(1500000)
   }
 
   _set_short_break = (ev) => {
     ev.preventDefault();
 
+    this.setState({reset_to: 300000});
     this.props.set_time(300000)
   }
 
   _set_long_break = (ev) => {
     ev.preventDefault();
 
+    this.setState({reset_to: 600000});
     this.props.set_time(600000)
+  }
+
+  _reset = (ev) => {
+    ev.preventDefault();
+
+    this.props.set_time(this.state.reset_to)
   }
 
   _start_stop = (ev) => {
@@ -78,6 +92,7 @@ class Timer extends React.Component {
           <Wrapper>
                 <TextButton onClick={ this._start_stop }>Pause/Resume</TextButton>
                 <TextButton onClick={ this._notify }>Test Notification</TextButton>
+                <TextButton onClick={ this._reset }>Reset</TextButton>
           </Wrapper>
       </div>
     );

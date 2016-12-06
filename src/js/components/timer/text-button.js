@@ -2,7 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 
 export const Wrapper = styled.section`
-  padding: 0.4em;
+  padding: 0.4em 0em;
   margin-top: 0.1em;
   margin-bottom: 0.1em;
   background: rgba(0,0,0,0.75);
