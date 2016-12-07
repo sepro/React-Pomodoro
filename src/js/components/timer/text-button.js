@@ -6,7 +6,7 @@ export const Wrapper = styled.section`
   margin-top: 0.1em;
   margin-bottom: 0.1em;
   background: rgba(0,0,0,0.75);
-  border-radius: 15px;
+  border-radius: 6px;
   text-align: center;
 `;
 
@@ -32,7 +32,20 @@ const Button = styled.button`
         background-color: ${props => props.primary ? "#2C8F30" : "#230C8F"};;
     }
 
+    @media (max-width: 520px) {
+        width: 120px;
+    }
 
+    @media (max-width: 436px) {
+        font-size: 12px;
+        width: 90px;
+    }
+
+    @media (max-width: 342px) {
+        font-size: 12px;
+        padding: 6px 0px;
+        width: 150px;
+    }
 `;
 
 class TextButton extends React.Component {

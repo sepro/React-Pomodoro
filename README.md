@@ -24,6 +24,6 @@ Push subtree to gh-pages, a quick way to set up a demo
 
 I'm a coder not an artist, so I've used publically available images and sounds labeled free for reuse with modification from:
 
-[www.publicdomainpictures.net](http://www.publicdomainpictures.net/pictures/140000/velka/baby-plum-tomatoes.jpg)
-[Emojine](https://commons.wikimedia.org/wiki/File:Emojione_1F345.svg)
-[Freesound](https://www.freesound.org/people/HonorHunter/sounds/271666/)
+  * [www.publicdomainpictures.net](http://www.publicdomainpictures.net/pictures/140000/velka/baby-plum-tomatoes.jpg)
+  * [Emojine](https://commons.wikimedia.org/wiki/File:Emojione_1F345.svg)
+  * [Freesound](https://www.freesound.org/people/HonorHunter/sounds/271666/)

@@ -27,7 +27,7 @@ const Time = styled.h1`
 const Wrapper = styled.section`
   padding: 4em 0em;
   background: rgba(128,128,128,0.6);
-  border-radius: 15px;
+  border-radius: 6px;
 
   @media (max-width: 600px) {
     padding: 1em 0em;
