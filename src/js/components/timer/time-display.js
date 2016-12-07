@@ -38,6 +38,10 @@ class TimeDisplay extends React.Component {
     return time;
   }
 
+  componentWillUpdate = (prevProps, prevState) => {
+    document.title = '(' + this._format_time(this.props.current_time) + ') - Pomodoro';
+  }
+
   render() {
     return (
         <Wrapper>

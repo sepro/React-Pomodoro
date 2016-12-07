@@ -21,12 +21,11 @@ class Timer extends React.Component {
 
       if (this.props.current_time > interval) {
             this.props.decrease_time(interval);
-            this.setState({last_time: current_time}, () => {setTimeout(this._decrease_time, 50)});
+            this.setState({last_time: current_time}, () => {setTimeout(this._decrease_time, 100)});
       } else {
             this.props.set_time(0);
             this.setState({last_time: current_time, running: false});
       }
-
     }
   }
 
