@@ -45,8 +45,8 @@ class Timer extends React.Component {
   _set_short_break = (ev) => {
     ev.preventDefault();
 
-    this.setState({reset_to: 3000});
-    this.props.set_time(3000)
+    this.setState({reset_to: 300000});
+    this.props.set_time(300000)
   }
 
   _set_long_break = (ev) => {
