@@ -29,6 +29,8 @@ class Timer extends React.Component {
       } else {
             this.props.set_time(0);
             this.setState({last_time: current_time, running: false});
+            var audio = new Audio('sound/tomato-squish.mp3');
+            audio.play();
       }
     }
   }
@@ -43,8 +45,8 @@ class Timer extends React.Component {
   _set_short_break = (ev) => {
     ev.preventDefault();
 
-    this.setState({reset_to: 300000});
-    this.props.set_time(300000)
+    this.setState({reset_to: 3000});
+    this.props.set_time(3000)
   }
 
   _set_long_break = (ev) => {
@@ -105,7 +107,6 @@ class Timer extends React.Component {
                 <TextButton onClick={ this._stop }>Stop</TextButton>
                 <TextButton onClick={ this._reset }>Reset</TextButton>
           </Wrapper>
-          <TextButton onClick={ this._notify }>Test Notification</TextButton>
       </div>
     );
   }
