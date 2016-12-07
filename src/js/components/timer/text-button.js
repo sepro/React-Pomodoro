@@ -12,7 +12,7 @@ export const Wrapper = styled.section`
 
 
 const Button = styled.button`
-    background-color: #4CAF50;
+    background-color: ${props => props.primary ? "#4CAF50" : "#4C50AF"};
     border: none;
     color: white;
     padding: 15px 0px;
@@ -29,7 +29,7 @@ const Button = styled.button`
     width: 150px;
 
     &:hover {
-        background-color: #2C8F30;
+        background-color: ${props => props.primary ? "#2C8F30" : "#230C8F"};;
     }
 
 
@@ -41,7 +41,7 @@ class TextButton extends React.Component {
   }
 
   render() {
-    return <Button onClick={ this.handleClick }>{ this.props.children }</Button>;
+    return <Button onClick={ this.handleClick } { ...this.props }>{ this.props.children }</Button>;
   }
 
 }

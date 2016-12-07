@@ -18,4 +18,7 @@ To start webpack with hot-reloading type:
     
 ## Acknowledgements
 
-http://www.publicdomainpictures.net/pictures/140000/velka/baby-plum-tomatoes.jpg
+I'm a coder not an artist, so I've used publically available images labeled free for reuse with modification from:
+
+[www.publicdomainpictures.net](http://www.publicdomainpictures.net/pictures/140000/velka/baby-plum-tomatoes.jpg)
+[Emojine](https://commons.wikimedia.org/wiki/File:Emojione_1F345.svg)

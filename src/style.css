@@ -1,8 +1,12 @@
 body {
     font-family: Trebuchet MS,Helvetica,sans-serif;
-    background-image: url("img/baby-plum-tomatoes.jpg");
+    background-image: url("img/tomato_background.png");
+    background-position: right bottom;
     background-size: cover;
     min-height: 100%;
+}
+
+#content {
     padding: 15px;
 }
 

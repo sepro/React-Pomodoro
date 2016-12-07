@@ -57,7 +57,7 @@ class Timer extends React.Component {
     this.props.set_time(this.state.reset_to)
   }
 
-  _start_stop = (ev) => {
+  _stop = (ev) => {
     ev.preventDefault();
 
     const current_time = new Date();
@@ -67,7 +67,15 @@ class Timer extends React.Component {
         this.props.decrease_time(interval);
 
         this.setState({running: false});
-    } else {
+    }
+  }
+
+  _start = (ev) => {
+    ev.preventDefault();
+
+    const current_time = new Date();
+
+    if (!this.state.running) {
         this.setState({running: true, last_time: current_time}, () => {this._decrease_time()});
     }
   }
@@ -82,7 +90,7 @@ class Timer extends React.Component {
     return (
       <div>
           <Wrapper>
-              <TextButton onClick={ this._set_pomodoro }>Pomodoro</TextButton>
+              <TextButton onClick={ this._set_pomodoro } primary>Pomodoro</TextButton>
               <TextButton onClick={ this._set_short_break }>Short Break</TextButton>
               <TextButton onClick={ this._set_long_break }>Long Break</TextButton>
           </Wrapper>
@@ -90,10 +98,11 @@ class Timer extends React.Component {
           <TimeDisplay current_time={ this.props.current_time } />
 
           <Wrapper>
-                <TextButton onClick={ this._start_stop }>Pause/Resume</TextButton>
-                <TextButton onClick={ this._notify }>Test Notification</TextButton>
+                <TextButton onClick={ this._start } primary>Start</TextButton>
+                <TextButton onClick={ this._stop }>Stop</TextButton>
                 <TextButton onClick={ this._reset }>Reset</TextButton>
           </Wrapper>
+          <TextButton onClick={ this._notify }>Test Notification</TextButton>
       </div>
     );
   }
