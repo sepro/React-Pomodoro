@@ -3,7 +3,7 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: './src/js/client.js',
-  output: { path: './src', filename: 'client.min.js' },
+  output: { path: './dist', filename: 'client.min.js' },
   module: {
     loaders: [
       {

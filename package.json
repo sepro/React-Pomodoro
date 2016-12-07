@@ -4,7 +4,7 @@
   "description": "Pure React project, a Pomodoro timer",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot",
+    "start": "./node_modules/.bin/webpack-dev-server --content-base dist --inline --hot",
     "test": "mocha --compilers jsx:babel-core/register -r jsdom-global/register ./src/js/tests/**/*.js"
   },
   "repository": {

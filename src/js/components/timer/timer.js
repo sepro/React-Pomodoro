@@ -1,5 +1,4 @@
-import React from "react";
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import React from 'react';
 import styled from 'styled-components';
 
 import TimeDisplay from './time-display';
@@ -7,11 +6,16 @@ import TextButton, {Wrapper} from './text-button'
 
 import dateFns from 'date-fns';
 
+
 class Timer extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {reset_to: 1500000, running: false, last_time: new Date()};
+    this.state = {
+        reset_to: 1500000,
+        running: false,
+        last_time: new Date()
+    };
   }
 
   _decrease_time = () => {
@@ -82,8 +86,8 @@ class Timer extends React.Component {
   _notify = (ev) => {
     ev.preventDefault();
 
-
   }
+
 
   render() {
     return (
