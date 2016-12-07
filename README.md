@@ -19,10 +19,6 @@ To start webpack with hot-reloading type:
 Push subtree to gh-pages, a quick way to set up a demo
 
     git subtree push --prefix dist origin gh-pages
-    
-or this shortcut
-
-    npm deploy
 
 ## Acknowledgements
 

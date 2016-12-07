@@ -5,8 +5,7 @@
   "main": "webpack.config.js",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --content-base dist --inline --hot",
-    "test": "mocha --compilers jsx:babel-core/register -r jsdom-global/register ./src/js/tests/**/*.js",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
+    "test": "mocha --compilers jsx:babel-core/register -r jsdom-global/register ./src/js/tests/**/*.js"
   },
   "repository": {
     "type": "git",
