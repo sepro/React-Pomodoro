@@ -3,6 +3,7 @@ body {
     background-image: url("img/tomato_background.png");
     background-position: right bottom;
     background-size: cover;
+    background-attachment: fixed;
     min-height: 100%;
 }
 
