@@ -12,7 +12,7 @@ class Timer extends React.Component {
     super(props);
 
     this.state = {
-        reset_to: 1500000,
+        reset_to: this.props.config.pomodoro,
         running: false,
         last_time: new Date()
     };
@@ -38,22 +38,22 @@ class Timer extends React.Component {
   _set_pomodoro = (ev) => {
     ev.preventDefault();
 
-    this.setState({reset_to: 1500000});
-    this.props.set_time(1500000)
+    this.setState({reset_to: this.props.config.pomodoro});
+    this.props.set_time(this.props.config.pomodoro)
   }
 
   _set_short_break = (ev) => {
     ev.preventDefault();
 
-    this.setState({reset_to: 300000});
-    this.props.set_time(300000)
+    this.setState({reset_to: this.props.config.short});
+    this.props.set_time(this.props.config.short)
   }
 
   _set_long_break = (ev) => {
     ev.preventDefault();
 
-    this.setState({reset_to: 600000});
-    this.props.set_time(600000)
+    this.setState({reset_to: this.props.config.long});
+    this.props.set_time(this.props.config.long)
   }
 
   _reset = (ev) => {
@@ -89,7 +89,6 @@ class Timer extends React.Component {
     ev.preventDefault();
 
   }
-
 
   render() {
     return (

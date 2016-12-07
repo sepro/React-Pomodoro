@@ -4,7 +4,6 @@ import Timer from './timer/timer';
 import Footer from './footer';
 
 export default class Layout extends React.Component {
-
   render() {
     return (
       <div>

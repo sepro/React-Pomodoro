@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
 
-import current_time from './current_time.js';
+import current_time from './current_time';
+import config from './config'
 
-const rootReducer = combineReducers({current_time});
+const rootReducer = combineReducers({current_time, config});
 
 export default rootReducer;
