@@ -25,6 +25,7 @@
     "react-addons-test-utils": "^15.3.1",
     "react-bootstrap": "^0.30.2",
     "react-dom": "^15.3.1",
+    "react-icons": "^2.2.1",
     "react-lite": "^0.15.17",
     "react-redux": "^4.4.5",
     "react-timer-mixin": "^0.13.3",

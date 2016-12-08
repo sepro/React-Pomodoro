@@ -2,8 +2,10 @@ import React from 'react';
 import Modal from 'boron/ScaleModal';
 
 import TextButton from '../text-button';
+import ConfigButton from './config-button';
 import ConfigInput from './config-input';
 import ConfigBody from './config-body';
+import FaCog from 'react-icons/fa/cog';
 
 class Config extends React.Component {
   constructor(props) {
@@ -46,7 +48,7 @@ class Config extends React.Component {
   render() {
     return (
       <div>
-        <TextButton onClick={this.showModal} primary>Config</TextButton>
+        <ConfigButton onClick={this.showModal}><FaCog size={46} /></ConfigButton>
         <Modal ref="modal">
           <ConfigBody>
           <h2>Set time</h2>

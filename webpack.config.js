@@ -13,7 +13,15 @@ module.exports = {
         query: {
           presets: ['es2015', 'react', 'stage-0']
         }
-      }
+      },
+        {
+            test: /(\.js|\.jsx)$/,
+            loader: 'babel',
+            include: [path.resolve(__dirname, './node_modules/react-icons/fa'), path.resolve(__dirname, './node_modules/react-icons/go')],
+            query: {
+                presets: ['es2015', 'react']
+            }
+        }
     ]
   },
   plugins:[
