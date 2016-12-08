@@ -23,15 +23,36 @@ class Config extends React.Component {
   }
 
   handlePomodoroChange = (event) => {
-    this.setState({pomodoro: parseInt(event.target.value) * 60000});
+    var value = parseInt(event.target.value);
+
+    if (isNaN(value)) {
+        this.setState({pomodoro:  0});
+        event.target.select();
+    } else {
+        this.setState({pomodoro:  value * 60000});
+    }
   }
 
   handleShortChange = (event) => {
-    this.setState({short: parseInt(event.target.value) * 60000});
+    var value = parseInt(event.target.value);
+
+    if (isNaN(value)) {
+        this.setState({pomodoro:  0});
+        event.target.select();
+    } else {
+        this.setState({short:  value * 60000});
+    }
   }
 
   handleLongChange = (event) => {
-    this.setState({long: parseInt(event.target.value) * 60000});
+    var value = parseInt(event.target.value);
+
+    if (isNaN(value)) {
+        this.setState({pomodoro:  0});
+        event.target.select();
+    } else {
+        this.setState({long:  value * 60000});
+    }
   }
 
   acceptSettings = () => {
@@ -53,7 +74,7 @@ class Config extends React.Component {
           <ConfigBody>
           <h2>Set time</h2>
             <label for="set_pomodoro">Pomodoro</label>
-            <ConfigInput type="text" id="set_pomodoro" name="pomodoro" onChange={ this.handlePomodoroChange } value={ (this.state.pomodoro/60000) }/>
+            <ConfigInput type="text" id="set_pomodoro" name="pomodoro" ref="pomodoro" onChange={ this.handlePomodoroChange } value={ (this.state.pomodoro/60000) }/>
             <label for="set_short_break">Short break</label>
             <ConfigInput type="text" id="set_short_break" name="short_break" onChange={ this.handleShortChange } value={ (this.state.short/60000) }/>
             <label for="set_long_break">Long break</label>

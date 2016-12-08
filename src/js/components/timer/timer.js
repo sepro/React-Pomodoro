@@ -11,7 +11,7 @@ class Timer extends React.Component {
     super(props);
 
     this.state = {
-        reset_to: this.props.config.pomodoro,
+        reset_to: 'pomodoro',
         running: false,
         last_time: new Date()
     };
@@ -37,28 +37,41 @@ class Timer extends React.Component {
   _set_pomodoro = (ev) => {
     ev.preventDefault();
 
-    this.setState({reset_to: this.props.config.pomodoro});
+    this.setState({reset_to: 'pomodoro'});
     this.props.set_time(this.props.config.pomodoro)
   }
 
   _set_short_break = (ev) => {
     ev.preventDefault();
 
-    this.setState({reset_to: this.props.config.short});
+    this.setState({reset_to: 'short'});
     this.props.set_time(this.props.config.short)
   }
 
   _set_long_break = (ev) => {
     ev.preventDefault();
 
-    this.setState({reset_to: this.props.config.long});
+    this.setState({reset_to: 'long'});
     this.props.set_time(this.props.config.long)
   }
 
   _reset = (ev) => {
     ev.preventDefault();
 
-    this.props.set_time(this.state.reset_to)
+    switch (this.state.reset_to) {
+        case 'pomodoro':
+            this.props.set_time(this.props.config.pomodoro);
+            break;
+        case 'short':
+            this.props.set_time(this.props.config.short);
+            break;
+        case 'long':
+            this.props.set_time(this.props.config.long);
+            break;
+        default:
+            this.props.set_time(this.props.config.pomodoro);
+    }
+
   }
 
   _stop = (ev) => {
