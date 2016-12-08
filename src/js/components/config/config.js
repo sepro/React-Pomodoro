@@ -63,6 +63,12 @@ class Config extends React.Component {
   }
 
   hideModal = () => {
+    this.setState({
+        pomodoro: this.props.config.pomodoro,
+        short: this.props.config.short,
+        long: this.props.config.long
+    });
+
     this.refs.modal.hide();
   }
 
@@ -70,7 +76,7 @@ class Config extends React.Component {
     return (
       <div>
         <ConfigButton onClick={this.showModal}><FaCog size={46} /></ConfigButton>
-        <Modal ref="modal">
+        <Modal ref="modal" closeOnClick={ false }>
           <ConfigBody>
           <h2>Set time</h2>
             <label for="set_pomodoro">Pomodoro</label>
