@@ -1,6 +1,9 @@
 # React-React-Pomodoro
-Pure reactjs project, runs a Pomodoro-Timer
+Pure reactjs project, runs a Pomodoro-Timer.
 
+[DEMO](http://sepro.github.com/React-Pomodoro)
+
+![screenshot](doc/screenshot.png)
 
 ## For developers
 Clone the repository and run npm install to pull in all the packages
