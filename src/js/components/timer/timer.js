@@ -1,7 +1,7 @@
 import React from 'react';
 
 import TimeDisplay from './time-display';
-import TextButton, {Wrapper} from '../text-button';
+import TextButton, {Wrapper} from '../styled-components/text-button';
 
 import dateFns from 'date-fns';
 

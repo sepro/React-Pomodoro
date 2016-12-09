@@ -10,8 +10,7 @@ export const Wrapper = styled.section`
   text-align: center;
 `;
 
-
-const Button = styled.button`
+const FixedButton = styled.button`
     background-color: ${props => props.primary ? "#4CAF50" : "#4C50AF"};
     border: none;
     color: white;
@@ -26,8 +25,11 @@ const Button = styled.button`
     -moz-text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
     -webkit-text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
     text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
-    width: 150px;
+    width: 120px;
+`;
 
+const TextButton = styled(FixedButton)`
+    width:120px;
     &:hover {
         background-color: ${props => props.primary ? "#2C8F30" : "#230C8F"};;
     }
@@ -44,19 +46,9 @@ const Button = styled.button`
     @media (max-width: 342px) {
         font-size: 12px;
         padding: 6px 0px;
-        width: 150px;
+        width: 75px;
     }
 `;
 
-class TextButton extends React.Component {
-  handleClick = (ev) => {
-    this.props.onClick(ev);
-  }
-
-  render() {
-    return <Button onClick={ this.handleClick } { ...this.props }>{ this.props.children }</Button>;
-  }
-
-}
-
-export default TextButton
+export {FixedButton};
+export default TextButton;

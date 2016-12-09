@@ -1,11 +1,16 @@
 import React from 'react';
-import Modal from 'boron/ScaleModal';
+import Modal from 'boron/FadeModal';
 
-import TextButton from '../text-button';
+import TextButton, {FixedButton} from '../styled-components/text-button';
 import ConfigButton from './config-button';
 import ConfigInput from './config-input';
 import ConfigBody from './config-body';
+
 import FaCog from 'react-icons/fa/cog';
+
+const boronStyle = {
+    width: '300px'
+};
 
 class Config extends React.Component {
   constructor(props) {
@@ -76,7 +81,7 @@ class Config extends React.Component {
     return (
       <div>
         <ConfigButton onClick={this.showModal}><FaCog size={46} /></ConfigButton>
-        <Modal ref="modal" closeOnClick={ false }>
+        <Modal ref="modal" closeOnClick={ false }  modalStyle={ boronStyle }>
           <ConfigBody>
           <h2>Set time</h2>
             <label for="set_pomodoro">Pomodoro</label>
@@ -86,7 +91,7 @@ class Config extends React.Component {
             <label for="set_long_break">Long break</label>
             <ConfigInput type="text" id="set_long_break" name="long_break" onChange={ this.handleLongChange } value={ (this.state.long/60000) }/>
           <hr />
-          <TextButton onClick={this.acceptSettings} primary>Accept</TextButton><TextButton onClick={this.hideModal}>Cancel</TextButton>
+          <FixedButton onClick={this.acceptSettings} primary small>Accept</FixedButton><FixedButton onClick={this.hideModal} small>Cancel</FixedButton>
           </ConfigBody>
         </Modal>
       </div>

@@ -2,7 +2,7 @@ import React from "react";
 
 import Config from './config/config';
 import Timer from './timer/timer';
-import Footer from './footer';
+import Footer from './styled-components/footer';
 
 export default class Layout extends React.Component {
   render() {
