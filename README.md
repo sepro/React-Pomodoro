@@ -5,6 +5,18 @@ Pure reactjs project, runs a Pomodoro-Timer.
 
 ![screenshot](doc/screenshot.png)
 
+## Deploy using Docker
+
+You can get React-Pomodoro in a container bundled with nginx for easy deployment
+
+    docker pull sepro/react-pomodoro
+    
+Start the webserver using the following command
+
+    docker run -p 80:80 -d sepro/react-pomodoro
+
+The website is now available on *localhost*.
+
 ## For developers
 Clone the repository and run npm install to pull in all the packages
 
