@@ -43,7 +43,6 @@
     "jsdom": "^9.4.2",
     "jsdom-global": "^2.1.0",
     "mocha": "^3.0.2",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.15.0"
+    "webpack": "^1.13.1"
   }
 }

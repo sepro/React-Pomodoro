@@ -22,15 +22,12 @@ Clone the repository and run npm install to pull in all the packages
 
     npm install
     
-Unit tests (mocha) for reducers, actions and components are included and
-can be started using:
 
-    npm test
-    
-To start webpack with hot-reloading type:
+To package/build the code (will end up in ./dist/client.min.js): 
 
-    npm start
+    webpack -p
     
+
 Push subtree to gh-pages, a quick way to set up a demo
 
     git subtree push --prefix dist origin gh-pages
