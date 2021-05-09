@@ -1,7 +1,7 @@
 # React-Pomodoro
 Pure reactjs project, runs a Pomodoro-Timer.
 
-[DEMO](http://sepro.github.com/React-Pomodoro)
+[DEMO](https://sebastian.proost.science/React-Pomodoro/)
 
 ![screenshot](doc/screenshot.png)
 
